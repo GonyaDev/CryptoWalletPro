@@ -12,13 +12,15 @@ final class CryptoListPresenterImpl: CryptoListPresenter {
     
     weak var view: CryptoListView?
     
+    var listOrderDescended = false
+    
     let coinsArray = [ "btc", "eth", "tron", "luna", "polkadot", "dogecoin", "tether", "stellar", "cardano", "xrp"]
     var coinInfoArray = [CurrencyInfoData]()
     
     private let networkService = NetworkService()
 
     func viewDidLoad() {
-        if UserDefaults.standard.bool(forKey: "isAlreadyLoggined") != true {
+        if UserDefaults.standard.bool(forKey: isAlreadyLogginedKey) != true {
             view?.showLoginScreen()
         }
         
@@ -48,5 +50,22 @@ final class CryptoListPresenterImpl: CryptoListPresenter {
                 view?.loadingIndicator(isHidden: true)
             }
         }
+    }
+    
+    func didTapLogout() {
+        UserDefaults.standard.removeObject(forKey: isAlreadyLogginedKey)
+        view?.showLoginScreen()
+    }
+    
+    func didTapSort() {
+        coinInfoArray.sort { lhs, rhs in
+            if listOrderDescended {
+                return lhs.marketData.dayPercentageChange ?? 0 >= rhs.marketData.dayPercentageChange ?? 0
+            } else {
+                return lhs.marketData.dayPercentageChange ?? 0 <= rhs.marketData.dayPercentageChange ?? 0
+            }
+        }
+        listOrderDescended.toggle()
+        view?.show(coinsInfo: coinInfoArray)
     }
 }

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C0056E3E289C116000EFF7E4 /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0056E3D289C116000EFF7E4 /* CoinDetailView.swift */; };
 		C056AC9228A7B13E00174504 /* CryptoListPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C056AC9128A7B13E00174504 /* CryptoListPresenterImpl.swift */; };
 		C056AC9428A7B6C500174504 /* CryptoListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C056AC9328A7B6C500174504 /* CryptoListProtocols.swift */; };
+		C056ACBA28AB985C00174504 /* LoginPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C056ACB928AB985C00174504 /* LoginPresenterImpl.swift */; };
+		C056ACBC28AB988200174504 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C056ACBB28AB988200174504 /* LoginProtocols.swift */; };
+		C05C9B5A28B5007700864961 /* CoinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05C9B5928B5007700864961 /* CoinDetailViewController.swift */; };
 		C0C2934F289173CA00E54877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2934E289173CA00E54877 /* AppDelegate.swift */; };
 		C0C29351289173CA00E54877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C29350289173CA00E54877 /* SceneDelegate.swift */; };
 		C0C29353289173CA00E54877 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C29352289173CA00E54877 /* LoginViewController.swift */; };
@@ -21,9 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C0056E3D289C116000EFF7E4 /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
 		C056AC9128A7B13E00174504 /* CryptoListPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListPresenterImpl.swift; sourceTree = "<group>"; };
 		C056AC9328A7B6C500174504 /* CryptoListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListProtocols.swift; sourceTree = "<group>"; };
+		C056ACB928AB985C00174504 /* LoginPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterImpl.swift; sourceTree = "<group>"; };
+		C056ACBB28AB988200174504 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		C05C9B5928B5007700864961 /* CoinDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailViewController.swift; sourceTree = "<group>"; };
 		C0C2934B289173CA00E54877 /* CryptoWalletPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoWalletPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C2934E289173CA00E54877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0C29350289173CA00E54877 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				C0C29352289173CA00E54877 /* LoginViewController.swift */,
+				C056ACB928AB985C00174504 /* LoginPresenterImpl.swift */,
+				C056ACBB28AB988200174504 /* LoginProtocols.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -78,7 +84,7 @@
 		C056AC8F28A7B0E200174504 /* CoinDetail */ = {
 			isa = PBXGroup;
 			children = (
-				C0056E3D289C116000EFF7E4 /* CoinDetailView.swift */,
+				C05C9B5928B5007700864961 /* CoinDetailViewController.swift */,
 			);
 			path = CoinDetail;
 			sourceTree = "<group>";
@@ -194,13 +200,15 @@
 			files = (
 				C056AC9428A7B6C500174504 /* CryptoListProtocols.swift in Sources */,
 				C0C29353289173CA00E54877 /* LoginViewController.swift in Sources */,
+				C05C9B5A28B5007700864961 /* CoinDetailViewController.swift in Sources */,
 				C056AC9228A7B13E00174504 /* CryptoListPresenterImpl.swift in Sources */,
 				C0C2936528918ED100E54877 /* CryptoListViewController.swift in Sources */,
 				C0C2934F289173CA00E54877 /* AppDelegate.swift in Sources */,
 				C0C29351289173CA00E54877 /* SceneDelegate.swift in Sources */,
+				C056ACBA28AB985C00174504 /* LoginPresenterImpl.swift in Sources */,
 				C0C2936B2892D00900E54877 /* NetworkService.swift in Sources */,
 				C0C293632891755600E54877 /* Extensions.swift in Sources */,
-				C0056E3E289C116000EFF7E4 /* CoinDetailView.swift in Sources */,
+				C056ACBC28AB988200174504 /* LoginProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

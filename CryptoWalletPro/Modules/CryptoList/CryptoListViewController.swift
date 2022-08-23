@@ -26,6 +26,18 @@ class CryptoListViewController: UIViewController {
         return progress
     }()
     
+     lazy var logoutButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "arrow.backward.circle.fill"), style: .plain, target: self, action: #selector(didTapLogout))
+        button.tintColor = .white
+        return button
+    }()
+    
+    lazy var sortButton: UIBarButtonItem = {
+       let button = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down.circle.fill"), style: .plain, target: self, action: #selector(didTapSort))
+       button.tintColor = .white
+       return button
+   }()
+    
     init() {
         let presenter = CryptoListPresenterImpl()
         self.presenter = presenter
@@ -42,6 +54,9 @@ class CryptoListViewController: UIViewController {
         view.backgroundColor = .systemBlue
         view.addSubview(tableView)
         view.addSubview(loadingIndicator)
+        title = "CryptoWalletPro"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationItem.rightBarButtonItems = [logoutButton, sortButton,]
         setupLayout()
         tableView.delegate = self
         tableView.dataSource = self
@@ -64,6 +79,14 @@ class CryptoListViewController: UIViewController {
             loadingIndicator.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
+    
+    @objc func didTapLogout() {
+        presenter.didTapLogout()
+    }
+    
+    @objc func didTapSort() {
+        presenter.didTapSort()
+    }
 }
 
 extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -80,14 +103,12 @@ extension CryptoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let coinInfo = coinInfoArray[indexPath.row]
-        let coinDetailView = CoinDetailView(coinInfo: coinInfo)
-        let hostingController = UIHostingController(rootView: coinDetailView)
+        let coinDetailView = CoinDetailViewController(coinInfo: coinInfo)
         //present(hostingController, animated: true)
-        navigationController?.pushViewController(hostingController, animated: true)
+        navigationController?.pushViewController(coinDetailView, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
 
 extension CryptoListViewController: CryptoListView {

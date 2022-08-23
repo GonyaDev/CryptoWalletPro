@@ -15,4 +15,6 @@ protocol CryptoListView: AnyObject {
 
 protocol CryptoListPresenter {
     func viewDidLoad()
+    func didTapLogout()
+    func didTapSort()
 }
